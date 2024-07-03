@@ -7,14 +7,23 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server --port=9000 --entry-file=index.html dev/",
-    "build": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js",
-    "watch": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js --watch",
+    "build": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js --define:SITE_URL=false",
+    "watch": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js --watch --define:SITE_URL=false",
+    "emulator": "CACHE=true firebase emulators:start --export-on-exit=./firebase_data --import=./firebase_data",
     "build_prod": "yarn esbuild src/index.jsx --bundle --outfile=public/index.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "esbuild": "^0.14.18",
+    "firebase": "^10.12.2",
+    "firebase-tools": "^13.12.0",
+    "framer-motion": "^11.2.12",
     "live-server": "1.2.1",
+    "navigo-react": "^2.0.3",
     "react": "^18",
     "react-dom": "^18"
   }
