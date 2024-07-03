@@ -26,9 +26,7 @@
     "rewrites": [
       {
         "source": "/api/**",
-        "function": {
-          "functionId": "api"
-        }
+        "function": "api"
       },
       {
         "source": "**",

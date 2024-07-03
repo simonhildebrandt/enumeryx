@@ -15,6 +15,12 @@ admin.initializeApp();
 
 const app = express();
 
+app.use((req, _res, next) => {
+  // Clear function name out of url for Firebase rewrite
+  req.url = req.url.replace(/\/api/, "");
+  next();
+});
+
 app.get("/:id", async (req, res) => {
   const { id } = req.params;
   const { key } = req.query;
