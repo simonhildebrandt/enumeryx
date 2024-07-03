@@ -10,7 +10,7 @@
     "build": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js --define:DEBUG=true",
     "watch": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js --watch --define:DEBUG=true",
     "emulator": "CACHE=true firebase emulators:start --export-on-exit=./firebase_data --import=./firebase_data",
-    "build_prod": "yarn esbuild src/index.jsx --bundle --outfile=public/index.js"
+    "build_prod": "yarn esbuild src/index.jsx --bundle --outfile=public/index.js --define:DEBUG=true"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
